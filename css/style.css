@@ -1,0 +1,245 @@
+@charset "UTF-8";
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    outline: none;
+    box-sizing: border-box;
+    user-select: none;
+}
+body
+{
+    height: 100vh;
+    background-color: #efeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input[type="image"]
+{
+    pointer-events: none;
+}
+
+
+@font-face
+{
+    font-family: "icon";
+    src: url('../font/iconfont.ttf') format('truetype'),
+         url('../font/iconfont.woff') format('woff'),
+         url('../font/iconfont.woff2') format('woff2');
+}
+.locate
+{
+    font-family: "icon" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.locate::before
+{
+    content: '\e601';
+}
+
+
+.weather
+{
+    position: relative;
+}
+.weatherMax
+{
+    display: none;
+    width: 280px;
+    height: 242px;
+    padding: 15px;
+    background-color: rgba(255,255,255, .5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    top: -242px;
+    left: calc(50% - 140px);
+}
+.weatherMax,
+.text,
+.search,
+.empty,
+.btn,
+.tips,
+.off
+{
+    position: absolute;
+}
+.form
+{
+    width: 250px;
+    height: 20px;
+    position: relative;
+}
+.locate,
+.empty,
+.btn
+{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 18px;
+    color: slategrey;
+    cursor: pointer;
+}
+.text
+{
+    width: 0;
+    height: 20px;
+    background-color: white;
+    border-radius: 6px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: all .5s;
+    top: 50%;
+    left: 50%;
+}
+.width
+{
+    width: 250px;
+    pointer-events: unset;
+}
+.search
+{
+    width: inherit;
+    height: 20px;
+    padding: 0 40px 0 6px;
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+}
+.search:valid + .empty
+{
+    display: block;
+}
+.empty
+{
+    display: none;
+    top: 0;
+    right: 20px;
+}
+.btn
+{
+    top: 0;
+    right: 0;
+}
+.btn::before,
+.btn::after
+{
+    content: '';
+    position: absolute;
+}
+.btn::before
+{
+    width: 10px;
+    height: 10px;
+    border: 2px solid slategrey;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+}
+.btn::after
+{
+    width: 3px;
+    height: 2px;
+    background-color: slategrey;
+    transform: rotate(45deg);
+    top: 15px;
+    left: 13px;
+}
+.tips
+{
+    width: 280px;
+    height: 242px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    transform: scale(0);
+    transition: all .5s;
+    top: 0;
+    left: 0;
+}
+.off
+{
+    cursor: pointer;
+    top: 15px;
+    right: 15px;
+}
+.tips div:nth-child(3),
+.tips div:nth-child(4),
+.tips div:nth-child(5)
+{
+    margin: 6px 0 0;
+    text-indent: 2em;
+    text-align: justify;
+    line-height: 25px;
+}
+.example
+{
+    cursor: pointer;
+}
+.iconMax
+{
+    display: block;
+    height: 70px;
+    margin: auto;
+    padding: 10px 0 0;
+}
+.state
+{
+    margin: 0 0 5px 0;
+}
+.state,
+.forecast
+{
+    text-align: center;
+    font-size: 12px;
+}
+.everyday
+{
+    margin: 10px 0 0;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.day,
+.airQuality
+{
+    width: 48px;
+}
+.icon_temp
+{
+    display: flex;
+    align-items: center;
+}
+.icon
+{
+    height: 20px;
+}
+.airQuality
+{
+    text-align: right;
+}
+.weatherMin
+{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+.weatherMin div,
+.weatherMin input
+{
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+.weatherMin input
+{
+    margin: 0 4px;
+}
